@@ -20,21 +20,21 @@ public class EmployeeList {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 			
 			
-			String db="C:\\Users\\home\\Desktop";
+			String db="C:/Users/home/Desktop/Employee1.accdb";
 			String url = "jdbc:ucanaccess://" +db;
 			con = DriverManager.getConnection(url);
-			st = con.createStatement(result.TYPE_SCROLL_INSENSITIVE,result.CONCUR_UPDATABLE);
+			st = con.createStatement(/*result.TYPE_SCROLL_INSENSITIVE,result.CONCUR_UPDATABLE*/);
 			String sql = "SELECT * from Emp";
 			result = st.executeQuery(sql);
 			
-			/*while(result.next())
+			while(result.next())
 			{
 				String lName = result.getString("LastName");
 				String fName = result.getString("FirstName");
 				String age = result.getString("Age");
 				
 				System.out.println(lName +" " +fName +" "+ age);
-			}*/
+			}
 			
 		}catch(Exception ex){
 			System.out.println(ex);
